@@ -24,7 +24,8 @@
     "twilio"
   ],
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "tsc-watch": "tsc --sourcemap -w"
   },
   "license": "MIT",
   "dependencies": {
