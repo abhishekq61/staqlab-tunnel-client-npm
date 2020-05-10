@@ -6,13 +6,26 @@
   "repository": {
     "url": "https://github.com/abhishekq61/staqlab-tunnel-client-npm"
   },
+  "keywords": [
+    "tunnel",
+    "ssh",
+    "ngrok alternative",
+    "serveo alternative",
+    "localtunnel alternative",
+    "ssh tunnel",
+    "webhook",
+    "shopify",
+    "localhost",
+    "nexmo",
+    "twilio"
+  ],
   "scripts": {
     "tsc": "tsc"
   },
   "bin": {
     "staqlab-tunnel": "./dist/index.js"
   },
-  "version": "0.0.9",
+  "version": "0.0.12",
   "license": "MIT",
   "dependencies": {
     "fstream": "^1.0.12",
