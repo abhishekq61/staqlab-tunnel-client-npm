@@ -1,8 +1,12 @@
 {
   "name": "@staqlab/staqlab-tunnel",
   "description": "connect your localhost to the public internet through ssh tunnel and create public link which you can share anywhere to test webhooks such as shopify hooks, nexmo hooks, facebooks hooks etc",
-  "main": "dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
+  "bin": {
+    "staqlab-tunnel": "./lib/index.js"
+  },
+  "version": "0.0.16",
   "repository": {
     "url": "https://github.com/abhishekq61/staqlab-tunnel-client-npm"
   },
@@ -22,10 +26,6 @@
   "scripts": {
     "tsc": "tsc"
   },
-  "bin": {
-    "staqlab-tunnel": "./dist/index.js"
-  },
-  "version": "0.0.14",
   "license": "MIT",
   "dependencies": {
     "fstream": "^1.0.12",

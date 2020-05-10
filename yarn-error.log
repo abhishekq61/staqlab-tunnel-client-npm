@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add tupescript --dev
+  /usr/local/bin/node /usr/local/bin/yarn add @staqlab/staqlab-tunnel
 
 PATH: 
   /home/abhishek/Documents/sarkaribabu/code/staqlab-tunnel-client-npm/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-13-oracle/bin:/usr/lib/jvm/java-13-oracle/db/bin
@@ -14,36 +14,47 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/tupescript: Not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66947:18)
-      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140665:22)
-      at Request.emit (events.js:188:13)
-      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141637:10)
-      at Request.emit (events.js:188:13)
-      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141559:12)
-      at Object.onceWrapper (events.js:276:13)
-      at IncomingMessage.emit (events.js:193:15)
-      at endReadableNT (_stream_readable.js:1129:12)
-      at process.internalTickCallback (internal/process/next_tick.js:72:19)
+  Error: EACCES: permission denied, unlink '/home/abhishek/Documents/sarkaribabu/code/staqlab-tunnel-client-npm/node_modules/balanced-match/.npmignore'
 
 npm manifest: 
   {
-    "name": "staqlab-tunnel",
+    "name": "@staqlab/staqlab-tunnel",
     "description": "connect your localhost to the public internet through ssh tunnel and create public link which you can share anywhere to test webhooks such as shopify hooks, nexmo hooks, facebooks hooks etc",
-    "main": "dist/index.js",
-    "types": "./dist/index.d.ts",
+    "main": "lib/index.js",
+    "types": "./lib/index.d.ts",
+    "bin": {
+      "staqlab-tunnel": "./lib/index.js"
+    },
+    "repository": {
+      "url": "https://github.com/abhishekq61/staqlab-tunnel-client-npm"
+    },
+    "keywords": [
+      "tunnel",
+      "ssh",
+      "ngrok alternative",
+      "serveo alternative",
+      "localtunnel alternative",
+      "ssh tunnel",
+      "webhook",
+      "shopify",
+      "localhost",
+      "nexmo",
+      "twilio"
+    ],
     "scripts": {
       "tsc": "tsc"
     },
-    "version": "1.0.0",
+    "version": "0.0.15",
     "license": "MIT",
     "dependencies": {
+      "fstream": "^1.0.12",
       "unzip": "^0.1.11",
       "user-home": "^2.0.0"
     },
     "devDependencies": {
       "@types/node": "^13.13.5",
-      "tsc": "^1.20150623.0"
+      "tsc": "^1.20150623.0",
+      "typescript": "^3.8.3"
     }
   }
 
@@ -118,6 +129,16 @@ Lockfile:
       mkdirp "0.5"
       rimraf "2"
   
+  fstream@^1.0.12:
+    version "1.0.12"
+    resolved "https://registry.yarnpkg.com/fstream/-/fstream-1.0.12.tgz#4e8ba8ee2d48be4f7d0de505455548eae5932045"
+    integrity sha512-WvJ193OHa0GHPEL+AycEJgxvBEwyfRkN1vhjca23OaPVMCaLCXTd5qAu82AjTcgP1UJmytkOKb63Ypde7raDIg==
+    dependencies:
+      graceful-fs "^4.1.2"
+      inherits "~2.0.0"
+      mkdirp ">=0.5 0"
+      rimraf "2"
+  
   glob@^7.1.3:
     version "7.1.6"
     resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
@@ -129,6 +150,11 @@ Lockfile:
       minimatch "^3.0.4"
       once "^1.3.0"
       path-is-absolute "^1.0.0"
+  
+  graceful-fs@^4.1.2:
+    version "4.2.4"
+    resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
+    integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
   
   graceful-fs@~3.0.2:
     version "3.0.12"
@@ -175,7 +201,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
     integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
   
-  mkdirp@0.5:
+  mkdirp@0.5, "mkdirp@>=0.5 0":
     version "0.5.5"
     resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.5.tgz#d91cefd62d1436ca0f41620e251288d420099def"
     integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
@@ -262,6 +288,11 @@ Lockfile:
     version "1.20150623.0"
     resolved "https://registry.yarnpkg.com/tsc/-/tsc-1.20150623.0.tgz#4ebc3c774e169148cbc768a7342533f082c7a6e5"
     integrity sha1-Trw8d04WkUjLx2inNCUz8ILHpuU=
+  
+  typescript@^3.8.3:
+    version "3.8.3"
+    resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.8.3.tgz#409eb8544ea0335711205869ec458ab109ee1061"
+    integrity sha512-MYlEfn5VrLNsgudQTVJeNaQFUAI7DkhnOjdpAp4T+ku1TfQClewlbSuTVHiA+8skNBgaf02TL/kLOvig4y3G8w==
   
   unzip@^0.1.11:
     version "0.1.11"

@@ -4,7 +4,7 @@ import * as  os from 'os';
 import {exec} from "child_process";
 import * as unzip from "unzip";
 
-export class StaqlabTunnelClient {
+export = class StaqlabTunnelClient {
     home: string;
 
     constructor(private runCommand: string) {
