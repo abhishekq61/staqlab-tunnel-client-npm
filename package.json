@@ -6,10 +6,11 @@
   "bin": {
     "staqlab-tunnel": "./lib/index.js"
   },
-  "version": "0.0.16",
+  "version": "0.0.18",
   "repository": {
-    "url": "https://github.com/abhishekq61/staqlab-tunnel-client-npm"
+    "url": "https://github.com/abhishekq61/tunnel-client"
   },
+  "homepage": "https://github.com/abhishekq61/tunnel-client",
   "keywords": [
     "tunnel",
     "ssh",
